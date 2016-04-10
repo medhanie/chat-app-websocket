@@ -1,0 +1,33 @@
+allprojects {
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+version = '1.0.0'
+
+repositories {
+ jcenter()
+}
+
+}
+
+
+project(':Services') {
+dependencies {
+	compile project(':Repositories')
+}
+}
+
+
+project(':Services') {
+dependencies {
+	compile project(':Repositories')
+}
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
+
